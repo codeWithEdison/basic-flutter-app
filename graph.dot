@@ -1,0 +1,46 @@
+digraph SocialNetwork {
+    rankdir=LR; // Left to right layout
+    node [shape=ellipse]; // Default node shape
+
+    // Subgraph for Friends
+    subgraph cluster_friends {
+        label = "Friends";
+        Alice;
+        Bob;
+        Charlie;
+        Dave;
+        style=dashed;
+    }
+
+    // Subgraph for Family
+    subgraph cluster_family {
+        label = "Family";
+        Eve;
+        Frank;
+        Grace;
+        style=dotted;
+    }
+
+    // Subgraph for Colleagues
+    subgraph cluster_colleagues {
+        label = "Colleagues";
+        Hannah;
+        Ian;
+        Jack;
+        style=solid;
+    }c
+
+    // Edges between nodes
+    Alice -> Bob;
+    Alice -> Charlie;
+    Bob -> Dave;
+    Charlie -> Eve;
+    Eve -> Frank;
+    Frank -> Grace;
+    Hannah -> Ian;
+    Ian -> Jack;
+    
+    // Interconnections
+    Charlie -> Hannah;
+    Dave -> Jack;
+}
